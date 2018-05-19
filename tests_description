@@ -1,0 +1,16 @@
+Test 1
+
+Task name: Copy
+
+Save folder: Parameters/test_1
+Vectors: 5
+Bits per vector: 5
+Memory rows: 128
+Memory columns: 50
+Learning rate: 8e-5
+Decay: 0.7
+Momentum: 0.7
+Number of read vectors: 5
+
+Command: python dnc.py --train 10000 --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder test_1 --vectors 5 --bits 5
+
