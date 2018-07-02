@@ -15,9 +15,8 @@ Number of read vectors: 5
 
 Commands: 
 
-python dnc.py --train 100000 --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_1 --plot --restore --vectors 3 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
+python dnc.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_1 --plot --restore --vectors 3 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
-python ntm.py --train 100000 --task_module NeuralTuringMachine.Dataset.CopyGenerator --task_class CopyGenerator --folder ntm_test_1 --plot --restore --vectors 3 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
 
 ----------------------------------------------- Test 2 -----------------------------------------------
@@ -36,9 +35,7 @@ Number of read vectors: 5
 
 Commands: 
 
-python dnc.py --train 100000 --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_2 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
-
-python ntm.py --train 100000 --task_module NeuralTuringMachine.Dataset.CopyGenerator --task_class CopyGenerator --folder ntm_test_2 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
+python dnc.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_2 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
 ----------------------------------------------- Test 3 -----------------------------------------------
 
@@ -56,14 +53,7 @@ Number of read vectors: 5
 
 Commands: 
 
-python dnc.py --train 100000 --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_3 --plot --restore --vectors 10 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
-
-python ntm.py --train 100000 --task_module NeuralTuringMachine.Dataset.CopyGenerator --task_class CopyGenerator --folder ntm_test_3 --plot --restore --vectors 10 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
-
-
-
-
-
+python dnc.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_3 --plot --restore --vectors 10 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
 
 ----------------------------------------------- Test 4 -----------------------------------------------
@@ -82,9 +72,7 @@ Number of read vectors: 5
 
 Commands: 
 
-python dnc.py --train 100000 --task_module DifferentiableNeuralComputer.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder dnc_test_4 --plot --restore --vectors 3 --bits 3 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
-
-python ntm.py --train 100000 --task_module NeuralTuringMachine.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder ntm_test_4 --plot --restore --vectors 3 --bits 3 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
+python dnc.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder dnc_test_4 --plot --restore --vectors 3 --bits 3 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
 ----------------------------------------------- Test 5 -----------------------------------------------
 
@@ -102,9 +90,8 @@ Number of read vectors: 5
 
 Commands: 
 
-python dnc.py --train 100000 --task_module DifferentiableNeuralComputer.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder dnc_test_5 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
+python dnc.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder dnc_test_5 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
-python ntm.py --train 100000 --task_module NeuralTuringMachine.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder ntm_test_5 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
 
 ----------------------------------------------- Test 6 -----------------------------------------------
@@ -123,7 +110,41 @@ Number of read vectors: 5
 
 Commands: 
 
-python dnc.py --train 100000 --task_module DifferentiableNeuralComputer.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder dnc_test_6 --plot --restore --vectors 10 --bits 10 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
+python dnc.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder dnc_test_6 --plot --restore --vectors 10 --bits 10 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
 
-python ntm.py --train 100000 --task_module NeuralTuringMachine.Dataset.AssociativeRecallGenerator --task_class AssociativeRecallGenerator --folder ntm_test_6 --plot --restore --vectors 10 --bits 10 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 50 --mem_cols 20
+----------------------------------------------- Test 7 -----------------------------------------------
+
+Task name: Copy
+
+Save folder: test_7
+Vectors: 5
+Bits per vector: 5
+Memory rows: 100
+Memory columns: 40
+Learning rate: 1e-4
+Decay: 0.9
+Momentum: 0.9
+Number of read vectors: 5
+
+Commands: 
+
+python dnc.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_7 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 100 --mem_cols 40
+
+----------------------------------------------- Test 8 -----------------------------------------------
+
+Task name: Copy
+
+Save folder: test_8
+Vectors: 5
+Bits per vector: 5
+Memory rows: 100
+Memory columns: 40
+Learning rate: 1e-4
+Decay: 0.9
+Momentum: 0.9
+Number of read vectors: 5
+
+Commands: 
+
+python dnc_test_8.py [--train 100000 | --test 10] --task_module DifferentiableNeuralComputer.Dataset.CopyGenerator --task_class CopyGenerator --folder dnc_test_8 --plot --restore --vectors 5 --bits 5 --l_rate 1e-4 --decay 0.9 --momentum 0.9 --mem_rows 100 --mem_cols 40
 
