@@ -36,9 +36,10 @@ class DynamicAllocation():
 		u_vector = tf.reshape(usage_vector, [tf.size(usage_vector)])
 		f_list = tf.reshape(free_list, [tf.size(free_list)])
 
+		_, inv_f_list = tf.nn.top_k(tf.gather(f_list, f_list),  k=tf.size(f_list))
+		inv_f_list = tf.gather(tf.reverse(inv_f_list, axis=[-1]), f_list)
 
-
-		allocation_weights = tf.gather(tf.multiply(1 - tf.gather(u_vector, f_list), tf.cumprod(tf.gather(u_vector, f_list))), f_list)
+		allocation_weights = tf.gather(tf.multiply(1 - tf.gather(u_vector, f_list), tf.cumprod(tf.gather(u_vector, f_list))), inv_f_list)
 
 		return allocation_weights
 
