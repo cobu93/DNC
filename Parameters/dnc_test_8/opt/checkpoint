@@ -1,0 +1,6 @@
+model_checkpoint_path: "dnc-99900"
+all_model_checkpoint_paths: "dnc-99700"
+all_model_checkpoint_paths: "../dnc-99800"
+all_model_checkpoint_paths: "dnc-99800"
+all_model_checkpoint_paths: "../dnc-99900"
+all_model_checkpoint_paths: "dnc-99900"
