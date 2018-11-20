@@ -123,9 +123,12 @@ def train(i_placeholder, o_placeholder, num_vectors, num_bits, training_op, outp
 
 	for epoch in range(1, EPOCHS):
 		x_batch, y_batch = gen_function.generate(NUM_VECTORS, NUM_BITS, BATCH_SIZE)
+		run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
+		run_metadata = tf.RunMetadata()
 		
 		if(plot):
-			_, out, prediction, summary = sess.run([training_op, output, prediction_test, summary_merged], feed_dict={i_placeholder: x_batch, o_placeholder: y_batch})
+			_, out, prediction, summary = sess.run([training_op, output, prediction_test, summary_merged], feed_dict={i_placeholder: x_batch, o_placeholder: y_batch}, options=run_options, run_metadata=run_metadata)
+			train_writer.add_run_metadata(run_metadata, global_step.eval())
 			train_writer.add_summary(summary, global_step.eval())
 		else:
 			_, out, prediction = sess.run([training_op, output, prediction_test], feed_dict={i_placeholder: x_batch, o_placeholder: y_batch})
@@ -133,6 +136,7 @@ def train(i_placeholder, o_placeholder, num_vectors, num_bits, training_op, outp
 
 		if (epoch % 100) == 0:
 			if(plot):
+				train_writer.add_run_metadata(run_metadata, global_step.eval())
 				test_writer.add_summary(summary, global_step.eval())
 
 			mse = error.eval(feed_dict={i_placeholder: x_batch, o_placeholder: y_batch})
