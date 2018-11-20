@@ -136,7 +136,7 @@ def train(i_placeholder, o_placeholder, num_vectors, num_bits, training_op, outp
 
 		if (epoch % 100) == 0:
 			if(plot):
-				train_writer.add_run_metadata(run_metadata, global_step.eval())
+				test_writer.add_run_metadata(run_metadata, global_step.eval())
 				test_writer.add_summary(summary, global_step.eval())
 
 			mse = error.eval(feed_dict={i_placeholder: x_batch, o_placeholder: y_batch})
